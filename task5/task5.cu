@@ -11,7 +11,6 @@ __global__ void add(int *a, int *b, int *c) {
     c[index] = a[index] + b[index];
 }
 
-
 void random_ints(int *a, int size) {
     for (int i = 0; i < size; i++) {
         a[i] = rand();
@@ -32,7 +31,7 @@ int main(void) {
     c = (int*)malloc(size);
     random_ints(a, N);
     random_ints(b, N);
-    
+
     //копируем ввод на device
     cudaMemcpy(dev_a, a, size, cudaMemcpyHostToDevice);
     cudaMemcpy(dev_b, b, size, cudaMemcpyHostToDevice);
