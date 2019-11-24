@@ -14,6 +14,7 @@ void random_ints(int *a, int N) {
 #define N 5
 
 int main( void ) {
+    srand(100);
     int *a, *b, *c; // host копии a, b, c
     int *dev_a, *dev_b, *dev_c; // device копии a, b, c
     int size = N * sizeof(int);
