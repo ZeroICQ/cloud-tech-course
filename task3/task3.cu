@@ -5,8 +5,7 @@ __global__ void add(int *a, int *b, int *c) {
 }
 
 void random_ints(int *a, int N) {
-    int size = N/(sizeof(int));
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < N; i++) {
         a[i] = rand();
     }
 }
