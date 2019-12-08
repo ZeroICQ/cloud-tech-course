@@ -29,7 +29,7 @@ int main (int argc, char * argv []) {
     cudaMemcpy(dev, a, numBytes, cudaMemcpyHostToDevice);
     incKernel<<<blocks, threads>>>(dev);
     cudaMemcpy(a, dev, numBytes, cudaMemcpyDeviceToHost);
-    cudaEventRecord (stop, 0);
+    cudaEventRecord(stop, 0);
     cudaEventSynchronize(stop);
     cudaEventElapsedTime(&gpuTime, start, stop);
     // Печатаем время работы на CPU и GPU
